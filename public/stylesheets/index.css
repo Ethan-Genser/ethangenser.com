@@ -28,9 +28,8 @@ body {
     background-color: rgb(42,42,42);
 }
 #signature {
-    height: 80%;
-    margin-top: 5px;
-    margin-left: 20px;
+    width: 400px;
+    padding-left: 20px;
 }
 .navbutton {
     float: right;
@@ -63,6 +62,7 @@ body {
     height: 80%;
     text-align: center;
     padding-top: 15%;
+    margin-bottom: 200px;
 }
 #profile {
     width: 200px;
@@ -100,7 +100,7 @@ body {
 .anchor {
     width: 100%;
     display: inline-block;
-    margin-bottom: 100px;
+    margin-bottom: 400px;
 }
 #knowledgeTitle {
     margin: 80px 0px 0px 0px;
@@ -121,6 +121,9 @@ body {
     padding-top: calc(50px / 2 - 24pt / 2);
     display: inline-block;
 }
+#projects {
+    text-align: center;
+}
 .projectCard {
     width: 20%;
     height: 350px;
@@ -128,9 +131,61 @@ body {
     border-radius: 25px;
     background: rgb(149,149,149) url("") no-repeat fixed center;
     color: #000000;
-    box-shadow: 5px 5px 5px #000000;
+    box-shadow: 10px 10px 10px #000000;
     text-align: center;
     font-size: 24pt;
     padding-top: calc(50px / 2 - 24pt / 2);
     display: inline-block;
+    padding-top: 0;
+    position: relative;
+}
+.projectCardTitle {
+    margin: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    border-radius: 25px 25px 0px 0px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.projectCard:hover .projectCardTitle, .projectCard.hover .projectCardTitle {
+
+}
+#chatroomCard {
+    background: url("/chatroom.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#mazeCard {
+    background: url("/maze.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#virusCard {
+    background: url("/virus.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#stegCard {
+    background: url("/steg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.projectRepoImg {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+.projectLink {
+    text-decoration: none;
+}
+#contact {
+    text-align: center;
+    background-color: rgb(20,20,20);
+    padding-bottom: 40px;
+    margin-bottom: 0;
+}
+#contactTitle {
+    margin-bottom: 40px;
 }
