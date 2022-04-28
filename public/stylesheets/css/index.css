@@ -102,38 +102,20 @@ body {
     display: inline-block;
     margin-bottom: 400px;
 }
-#knowledgeTitle {
-    margin: 80px 0px 0px 0px;
-}
-#knowledge {
-    text-align: center;
-}
-.knowledgeCard {
-    width: 10%;
-    height: 50px;
-    margin: 30px 30px 30px 30px;
-    border-radius: 25px;
-    background-color: rgb(149,149,149);
-    color: #000000;
-    box-shadow: 5px 5px 5px #000000;
-    text-align: center;
-    font-size: 24pt;
-    padding-top: calc(50px / 2 - 24pt / 2);
-    display: inline-block;
-}
 #projects {
     text-align: center;
+    height: 40%;
 }
 .projectCard {
     width: 20%;
-    height: 350px;
+    height: 50%;
     margin: 30px 30px 30px 30px;
     border-radius: 25px;
     background: rgb(149,149,149) url("") no-repeat fixed center;
     color: #000000;
     box-shadow: 10px 10px 10px #000000;
     text-align: center;
-    font-size: 24pt;
+    font-size: 18pt;
     padding-top: calc(50px / 2 - 24pt / 2);
     display: inline-block;
     padding-top: 0;
@@ -144,29 +126,26 @@ body {
     background: rgba(0, 0, 0, 0.8);
     color: #ffffff;
     border-radius: 25px 25px 0px 0px;
-    padding-top: 5%;
-    padding-bottom: 5%;
-}
-.projectCard:hover .projectCardTitle, .projectCard.hover .projectCardTitle {
-
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 #chatroomCard {
-    background: url("/chatroom.png");
+    background: url("/img/chatroom.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
 #mazeCard {
-    background: url("/maze.png");
+    background: url("/img/maze.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
 #virusCard {
-    background: url("/virus.png");
+    background: url("/img/virus.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
 #stegCard {
-    background: url("/steg.png");
+    background: url("/img/steg.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
