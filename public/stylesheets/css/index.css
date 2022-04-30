@@ -186,3 +186,6 @@ body {
 #contactTitle {
     margin-bottom: 40px;
 }
+.preload {
+    display: none;
+}
