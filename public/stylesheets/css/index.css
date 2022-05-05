@@ -111,6 +111,7 @@ body {
 }
 .title {
     font-size: 24pt;
+    font-family: 'Courier New', Courier, monospace;
 }
 #aboutTitle {
     margin: 40px 30px 30px 0px;
