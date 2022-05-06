@@ -23,10 +23,11 @@ app.get('/', (req, res) => {
     console.log(`http request received: type: GET, path: '/', from: ${req.socket.remoteAddress}`);
     res.render('pages/index.html');
 });
-app.get('/virusSim', (req, res) => {
-  console.log(`http request received: type: GET, path: '/virusSim', from: ${req.socket.remoteAddress}`);
-    res.render('pages/virus.html');
-});
+
+// app.get('/virusSim', (req, res) => {
+//   console.log(`http request received: type: GET, path: '/virusSim', from: ${req.socket.remoteAddress}`);
+//     res.render('pages/virus.html');
+// });
 
 // Binds server to the port and stars listening.
 server.listen(PORT, () => {

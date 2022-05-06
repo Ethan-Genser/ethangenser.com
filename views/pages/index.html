@@ -5,75 +5,174 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/stylesheets/javascript/anchorScroll.js"></script>
     <title>Ethan Genser</title>
 </head>
 <body>
-    <!-- Navbar -->
-    <div id="navbar">
-        <div id="leftNavBar">
-        </div>
-        <div id="rightNavBar">
-            <a class="navbutton" href="#contact">Contact</a>
-            <a class="navbutton" href="#projects">Projects</a>
-            <a class="navbutton" href="#about">About</a>
-            <a class="navbutton" href="#home">Home</a>
+    <!-- Navbar-->
+    <div class="container-fluid" id="navbar">
+        <div class="row">
+            <div class="col-lg-1 col-md-1 col-sm-2 offset-lg-7 offset-md-7 offset-sm-2 order-1">
+                <a class="navbutton" href="#home">Home</a>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-2 order-2">
+                <a class="navbutton" href="#about">About</a>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-2 order-3">
+                <a class="navbutton" href="#experience">Experience</a>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-2 order-4">
+                <a class="navbutton" href="#projects">Projects</a>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-2 order-5">
+                <a class="navbutton" href="#contact">Contact</a>
+            </div>
         </div>
     </div>
+
     <!-- Home -->
-    <div class="anchor" id="home">
-        <img src="/img/signature.png" alt="Ethan Genser" id="signature"><br>
-        <img src="/img/me2.png" alt="profile picture" id="profile">
-        <p id="bio">Computer science at the University of Arkansas</p>
-        <a href="https://github.com/Ethan-Genser"><img src="/img/github.png" class="contactButton" id="githubButton"></a>
-        <a href="mailto:epgenser@uark.edu"><img src="/img/mail.png" class="contactButton" id="mailButton"></a>
-        <a href="https://www.linkedin.com/in/ethan-genser-48597916a/"><img src="/img/linkedin.png" class="contactButton" id="linkedinButton"></a>
-        <a href="https://www.instagram.com/ethangenser/"><img src="/img/instagram.png" class="contactButton" id="instagramButton"></a>
-    </div>
-    <!-- About -->
-    <div class="anchor" id="about">
-        <div id="aboutText">
-            <p class="title" id="aboutTitle">/* <span class="blue">About</span> me */</p>
-            <p id="bio">Hi &#128075;, I'm Ethan, a student currently studying computer science at the University of Arkansas in Fayetteville. My areas of interest are software engineering, artificial intelligence, cyber security, networks, and data science. I am always searching for new opportunities to expand my knowledge and learn new technologies. I work well in a team environment and strive for fast, effective solutions by coordinating with team members and planning flexible designs.</p>
+    <span id="home"></span>
+    <div class="container-fluid h-100" id="homeBlock">
+        <div class="row align-items-center h-100">
+            <div class="col-lg-6 col-md-6 col-sm-8 mx-auto">
+                <img src="/img/signature.png" alt="Ethan Genser" id="signature"><br>
+                <img src="/img/me2.png" alt="profile picture" id="profile">
+                <p id="bio">Computer science at the University of Arkansas</p>
+                <a href="https://github.com/Ethan-Genser"><img src="/img/github.png" class="contactButton" id="githubButton"></a>
+                <a href="mailto:epgenser@uark.edu"><img src="/img/mail.png" class="contactButton" id="mailButton"></a>
+                <a href="https://www.linkedin.com/in/ethan-genser-48597916a/"><img src="/img/linkedin.png" class="contactButton" id="linkedinButton"></a>
+                <a href="https://www.instagram.com/ethangenser/"><img src="/img/instagram.png" class="contactButton" id="instagramButton"></a>
+            </div>
         </div>
     </div>
-    <!-- Projects -->
-    <div class="anchor" id="projects">
-        <p class="title" id="projectsTitle">My.<span class="blue">Projects</span>[ ]</p>
-        <a href="https://github.com/Ethan-Genser/NodeChatRoom" class="projectLink">
-            <div class="projectCard" id="chatroomCard">
-                <p class="projectCardTitle">Web Chatroom</p>
-                <a href="https://github.com/Ethan-Genser/NodeChatRoom"><img src="/img/github.png" alt="Repository" class="projectRepoImg"></a>
+
+    <!-- About -->
+    <span id="about"></span>
+    <div class="container-fluid bodyBlock" id="aboutBlock">
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-md-3 col-sm-8 offset-2">
+                <p class="title"><span class="blue">About</span> me</p>
+                <hr>
+                <p id="bio">Hi &#128075;, I'm Ethan, a student currently studying computer science at the University of Arkansas in Fayetteville. My areas of interest are software engineering, artificial intelligence, cyber security, networks, and data science. I am always searching for new opportunities to expand my knowledge and learn new technologies. I work well in a team environment and strive for fast, effective solutions by coordinating with team members and planning flexible designs.</p>
             </div>
-        </a>
-        <a href="https://github.com/Ethan-Genser/Maze_Generator" class="projectLink">
-            <div class="projectCard" id="mazeCard">
-                <p class="projectCardTitle">Maze Generator</p>
-                <a href="https://github.com/Ethan-Genser/Maze_Generator"><img src="/img/github.png" alt="Repository" class="projectRepoImg"></a>
+            <div class="col-lg-3 col-md-3 offset-2 d-none d-md-block d-lg-block" id="aboutIconCol">
+                <img src="/img/aboutIcon.png" alt="aboutIcon" id="aboutIcon">
             </div>
-        </a>
-        <a href="https://github.com/Ethan-Genser/Virus_Simulator" class="projectLink">
-            <div class="projectCard" id="virusCard">
-                <p class="projectCardTitle">Virus Simulator</p>
-                <a href="/virusSim"><img src="/img/play.png" alt="Play" class="projectPlayImg"></a>
-                <a href="https://github.com/Ethan-Genser/Virus_Simulator"><img src="/img/github.png" alt="Repository" class="projectRepoImg"></a>
-            </div>
-        </a>
-        <a href="https://github.com/Ethan-Genser/Steganography" class="projectLink">
-            <div class="projectCard" id="stegCard">
-                <p class="projectCardTitle">Steganography Encoder</p>
-                <a href="https://github.com/Ethan-Genser/Steganography"><img src="/img/github.png" alt="Repository" class="projectRepoImg"></a>
-            </div>
-        </a>
+        </div>
     </div>
+
+    <!-- Experience -->
+    <span id="experience"><br></span>
+    <div class="container-fluid bodyBlock" id="experienceBlock">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 offset-2 d-none d-md-block d-lg-block">
+                <img src="/img/experienceIcon.png" alt="myLanguages" id="experienceIcon">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-8 offset-2">
+                <p class="title">My <span class="blue">Experience</span></p>
+                <hr>
+                <table id="experienceTable">
+                    <tr>
+                        <td>&#8226; Python</td>
+                        <td>&#8226; Bootstrap</td>
+                        <td>&#8226; SSH</td>
+                    </tr>
+                    <tr>
+                        <td>&#8226; JavaScript</td>
+                        <td>&#8226; JQuery</td>
+                        <td>&#8226; Git</td>
+                    </tr>
+                    <tr>
+                        <td>&#8226; Java</td>
+                        <td>&#8226; Apache</td>
+                        <td>&#8226; GitHub</td>
+                    </tr>
+                    <tr>
+                        <td>&#8226; C++</td>
+                        <td>&#8226; Websockets</td>
+                        <td>&#8226; Visual Studio</td>
+                    </tr>
+                    <tr>
+                        <td>&#8226; C#</td>
+                        <td>&#8226; Windows</td>
+                        <td>&#8226; VS Code</td>
+                    </tr>
+                    <tr>
+                        <td>&#8226; Django</td>
+                        <td>&#8226; MacOS</td>
+                        <td>&#8226; PosgreSQL</td>
+                    </tr>
+                    <tr>
+                        <td>&#8226; Node.js</td>
+                        <td>&#8226; Linux</td>
+                        <td>&#8226; Linq</td>
+                    </tr>
+                    <tr>
+                        <td>&#8226; Express</td>
+                        <td>&#8226; Bash</td>
+                        <td>&#8226; Raspberry Pi</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects -->
+    <span id="projects"><br></span>
+    <div class="container-flex bodyBlock" id="projectsBlock">
+        <div class="row">
+            <div class="col-10 offset-1">
+                <p class="title">My <span class="blue">Projects</span></p>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-6 d-flex justify-content-center projectCardContainer">
+                <div class="projectCard" id="chatroomCard">
+                    <p class="projectCardTitle">Chatroom</p>
+                    <a href="https://github.com/Ethan-Genser/NodeChatRoom"><img src="/img/github.png" alt="Repository" class="projectRepoImg"></a>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-sm-6 d-flex justify-content-center projectCardContainer">
+                <div class="projectCard" id="mazeCard">
+                    <p class="projectCardTitle">Maze Generator</p>
+                    <a href="https://github.com/Ethan-Genser/Maze_Generator"><img src="/img/github.png" alt="Repository" class="projectRepoImg"></a>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-sm-6 d-flex justify-content-center projectCardContainer">
+                <div class="projectCard" id="virusCard">
+                    <p class="projectCardTitle">Virus Simulator</p>
+                    <a href="https://github.com/Ethan-Genser/Virus_Simulator"><img src="/img/github.png" alt="Repository" class="projectRepoImg"></a>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-sm-6 d-flex justify-content-center projectCardContainer">
+                <div class="projectCard" id="stegCard">
+                    <p class="projectCardTitle">Steganography Encoder</p>
+                    <a href="https://github.com/Ethan-Genser/Steganography"><img src="/img/github.png" alt="Repository" class="projectRepoImg"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Contact -->
-    <div class="anchor" id="contact">
-        <p class="title" id="contactTitle"><span class="blue">Contact</span>(me);</p>
-        <a href="https://github.com/Ethan-Genser"><img src="/img/github.png" class="contactButton" id="githubButton"></a>
-        <a href="mailto:epgenser@uark.edu"><img src="/img/mail.png" class="contactButton" id="mailButton"></a>
-        <a href="https://www.linkedin.com/in/ethan-genser-48597916a/"><img src="/img/linkedin.png" class="contactButton" id="linkedinButton"></a>
-        <a href="https://www.instagram.com/ethangenser/"><img src="/img/instagram.png" class="contactButton" id="instagramButton"></a>
+    <span id="contact"></span>
+    <div class="container-flex" id="contactBlock">
+        <div class="row">
+            <div class="col-12">
+                <p class="title" id="contactTitle"><span class="blue">Contact </span>me</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <a href="https://github.com/Ethan-Genser"><img src="/img/github.png" class="contactButton" id="githubButton"></a>
+                <a href="mailto:epgenser@uark.edu"><img src="/img/mail.png" class="contactButton" id="mailButton"></a>
+                <a href="https://www.linkedin.com/in/ethan-genser-48597916a/"><img src="/img/linkedin.png" class="contactButton" id="linkedinButton"></a>
+                <a href="https://www.instagram.com/ethangenser/"><img src="/img/instagram.png" class="contactButton" id="instagramButton"></a>
+            </div>
+        </div>
     </div>
 
     <!-- Preloading -->

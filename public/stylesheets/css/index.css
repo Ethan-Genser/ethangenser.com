@@ -1,166 +1,118 @@
 /* 
- * dark gray:   20, 20, 20
- * gray:        42, 42, 42
- * light gray:  149, 149, 149
- * blue:        36, 130, 189
+ * dark gray:   20, 20, 20      #141414
+ * gray:        42, 42, 42      #2a2a2a
+ * light gray:  149, 149, 149   #959595
+ * blue:        36, 130, 189    #2482bd
  */
 
-html {
+ html, body {
     height: 100%;
     width: 100%;
-    background-color: rgb(42, 42, 42);
-    color: rgb(149,149,149);
+    background-color: #2a2a2a;
+    color: #959595;
     font-family: Arial, Helvetica, sans-serif;
-}
-body {
-    width: 100%;
-    height: 100%;
     margin: 0;
 }
-.blue {
-    color: rgb(36,130,189);
+
+hr {
+    background-color: #959595;
 }
+
+.blue {
+    color: #2482bd;
+}
+
 #navbar {
     position: fixed;
     top: 0;
-    width: 100%;
-    height: calc(16pt + 20px + 20px);
-    background-color: rgb(42,42,42);
+    background-color: #2a2a2a;
+    z-index: 2;
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
+
+.navbutton {
+    font-size: 16pt;
+    color: rgb(149, 149, 149);
+    text-decoration: none;
+    position: relative;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.navbutton:hover {
+    color: #ffffff;
+}
+
+#homeBlock {
+    color: #959595;
+    background-color: #141414;
+    text-align: center;
+}
+#profile {
+    width: 20%;
+    margin: 10px 0 10px 0;
 }
 #signature {
     width: 400px;
     padding-left: 20px;
 }
-#leftNavBar {
-    display: inline-block;
-    padding-left: 20px;
-}
-#homeButton {
-    float: left;
-    font-size: 20pt;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    position: relative;
-    text-decoration: none;
-    color: rgb(149,149,149);
-}
-#rightNavBar {
-    float: right;
-}
-.navbutton {
-    float: right;
-    margin-left: 40px;
-    margin-right: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 16pt;
-    color: rgb(149,149,149);
-    text-decoration: none;
-    position: relative;
-}
-.navbutton:hover {
-    color: rgb(255,255,255);
-}
-.navbutton:hover:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    left: 0;
-    bottom: -5px;
-    border-style: solid;
-    border-width: 0 0 3px;
-    border-color: rgb(36,130,189);
-}
-#home {
-    display: block;
-    background-color: rgb(20,20,20);
-    width: 100%;
-    height: 80%;
-    text-align: center;
-    padding-top: 15%;
-    margin-bottom: 200px;
-}
-#profile {
-    width: 200px;
-}
-#about {
-    width: 100%;
-    
-}
 #bio {
-    font-size: 16pt;
+    font-size: 14pt;
 }
 .contactButton {
     width: 50px;
-    margin-left: 20px;
-    margin-right: 20px;
     box-shadow: 5px 5px 5px #000000;
     border-radius: 190px;
-}
-#githubButton:hover {
-    content: url("/img/githubBlue.png")
-}
-#mailButton:hover {
-    content: url("/img/mailBlue.png")
-}
-#linkedinButton:hover {
-    content: url("/img/linkedinBlue.png")
-}
-#instagramButton:hover {
-    content: url("/img/instagramBlue.png")
+    margin: 0 20px 0 20px;
 }
 .title {
-    font-size: 24pt;
-    font-family: 'Courier New', Courier, monospace;
+    font-size: 28pt;
+    font-family: 'Roboto Condensed', sans-serif;
 }
-#aboutTitle {
-    margin: 40px 30px 30px 0px;
-}
-#aboutText {
-    margin: 40px 10% 30px 0px;
-    width: 40%;
+#aboutIconCol {
     text-align: center;
-    float: right;
 }
-#bio {
-    font-size: 16pt;
-    line-height: calc(16pt * 1.6);
+#aboutIcon {
+    width: 75%;
 }
-.anchor {
+.bodyBlock {
+    color: #959595;
+    margin: 200px 0 350px 0;
+}
+#experienceIcon {
     width: 100%;
-    display: inline-block;
-    margin-bottom: 400px;
 }
-#projects {
+#experienceTable {
+    border: none;
+    width: 100%;
+}
+#projectsBlock {
     text-align: center;
-    height: 40%;
 }
+
 .projectCard {
-    width: 20%;
-    height: 50%;
-    margin: 30px 30px 30px 30px;
     border-radius: 25px;
-    background: rgb(149,149,149) url("") no-repeat fixed center;
+    background: #959595 url("") no-repeat fixed center;
     color: #000000;
     box-shadow: 10px 10px 10px #000000;
     text-align: center;
-    font-size: 18pt;
-    padding-top: calc(50px / 2 - 24pt / 2);
-    display: inline-block;
-    padding-top: 0;
+    font-size: 14pt;
+    height: 300px;
+    width: 85%;
     position: relative;
 }
+
 .projectCardTitle {
-    margin: 0;
+    padding: 10px 0 10px 0;
     background: rgba(0, 0, 0, 0.8);
     color: #ffffff;
     border-radius: 25px 25px 0px 0px;
-    padding-top: 3%;
-    padding-bottom: 3%;
 }
-.projectCardTitle:hover {
-    color: rgb(30,130,189);
+
+.projectCardContainer {
+    margin: 10px 0 10px 0;
 }
+
 #chatroomCard {
     background: url("/img/chatroom.png");
     background-repeat: no-repeat;
@@ -179,8 +131,9 @@ body {
 #stegCard {
     background: url("/img/steg.png");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
 }
+
 .projectRepoImg {
     height: 50px;
     width: 50px;
@@ -188,32 +141,39 @@ body {
     bottom: 10px;
     right: 10px;
 }
-.projectPlayImg {
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    bottom: 10px;
-    /*right: calc(100% - 50px - 10px);*/
-    right: calc(50px + 10px + 10px);
-}
-.projectPlayImg:hover {
-    content: url("/img/playBlue.png")
-}
-.projectRepoImg:hover {
-    content: url("/img/githubBlue.png")
-}
-.projectLink {
-    text-decoration: none;
-}
-#contact {
+
+#contactBlock {
     text-align: center;
-    background-color: rgb(20,20,20);
-    padding-bottom: 40px;
-    margin-bottom: 0;
+    color: #959595;
+    padding: 0 0 20px 0;
+    background-color: #141414;
 }
-#contactTitle {
-    margin-bottom: 40px;
+
+.projectRepoImg:hover {
+    content: url("/img/githubBlue.png");
+    box-shadow: 0px 0px 0px #000000;
 }
+
+#githubButton:hover {
+    content: url("/img/githubBlue.png");
+    box-shadow: 0px 0px 0px #000000;
+}
+
+#mailButton:hover {
+    content: url("/img/mailBlue.png");
+    box-shadow: 0px 0px 0px #000000;
+}
+
+#linkedinButton:hover {
+    content: url("/img/linkedinBlue.png");
+    box-shadow: 0px 0px 0px #000000;
+}
+
+#instagramButton:hover {
+    content: url("/img/instagramBlue.png");
+    box-shadow: 0px 0px 0px #000000;
+}
+
 .preload {
     display: none;
 }
