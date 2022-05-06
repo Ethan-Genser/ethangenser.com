@@ -1,3 +1,5 @@
+restart.sh
+
 # Node build artifacts
 node_modules
 npm-debug.log
