@@ -48,8 +48,11 @@ hr {
     background-color: #141414;
     text-align: center;
 }
+#homeCenter {
+    height: 30%;
+}
 #profile {
-    width: 20%;
+    height: 75%;
     margin: 10px 0 10px 0;
 }
 #signature {
