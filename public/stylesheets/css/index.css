@@ -18,6 +18,10 @@ hr {
     background-color: #959595;
 }
 
+table {
+    vertical-align: middle;
+}
+
 .blue {
     color: #2482bd;
 }
@@ -25,14 +29,22 @@ hr {
 #navbar {
     position: fixed;
     top: 0;
+    height: 6%;
     background-color: #2a2a2a;
-    z-index: 2;
+    z-index: 1;
     text-align: center;
-    padding: 10px 0 10px 0;
-}
-
-.navbutton {
     font-size: 16pt;
+    
+}
+#navTable {
+    height: 100%;
+    width: 30%;
+    margin: 0 0 0 auto;
+}
+#navTable td {
+    padding: 0 10px 0 10px;
+}
+.navbutton {
     color: rgb(149, 149, 149);
     text-decoration: none;
     position: relative;
