@@ -7,7 +7,8 @@ const server = require('http').createServer(app);
 const bodyParser = require('body-parser');
 const res = require('express/lib/response');
 const path = require('path');
-var favicon = require('serve-favicon');
+const fs = require('fs');
+const favicon = require('serve-favicon');
 const { runInNewContext } = require('vm');
 const { send } = require('process');
 
@@ -25,7 +26,14 @@ app.get('/', (req, res) => {
     console.log(`http request received: type: GET, path: '/', from: ${req.socket.remoteAddress}`);
     res.render('pages/index.html');
 });
-
+app.get('/resume', (req, res) => {
+  console.log(`http request received: type: GET, path: '/resume', from: ${req.socket.remoteAddress}`);
+  var tempFile = path.join(__dirname, 'public', 'resume.pdf');
+  fs.readFile(tempFile, (err,data) => {
+     res.contentType("application/pdf");
+     res.send(data);
+  });
+});
 // app.get('/virusSim', (req, res) => {
 //   console.log(`http request received: type: GET, path: '/virusSim', from: ${req.socket.remoteAddress}`);
 //     res.render('pages/virus.html');

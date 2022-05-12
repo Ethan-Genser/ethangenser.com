@@ -184,8 +184,8 @@ table {
     box-shadow: 0px 0px 0px #000000;
 }
 
-#instagramButton:hover {
-    content: url("/img/instagramBlue.png");
+#resumeButton:hover {
+    content: url("/img/resumeBlue.png");
     box-shadow: 0px 0px 0px #000000;
 }
 
