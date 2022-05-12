@@ -1,4 +1,6 @@
 restart.sh
+restartApache.sh
+restartApp.sh
 
 # Node build artifacts
 node_modules
