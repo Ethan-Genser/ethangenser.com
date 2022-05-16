@@ -12,34 +12,32 @@ const favicon = require('serve-favicon');
 const { runInNewContext } = require('vm');
 const { send } = require('process');
 
-// ----- Express http server -----
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(favicon(path.join(__dirname, 'public', 'img', 'favicon.ico')));
-app.use(express.json());
-app.set('views', path.join(__dirname, 'views'));
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
+// Express http server
+{
+    app.use(express.static(path.join(__dirname, 'public')));
+    app.use(bodyParser.urlencoded({extended:true}));
+    app.use(favicon(path.join(__dirname, 'public', 'img', 'favicon.ico')));
+    app.use(express.json());
+    app.set('views', path.join(__dirname, 'views'));
+    app.engine('html', require('ejs').renderFile);
+    app.set('view engine', 'html');
 
-// Views
-app.get('/', (req, res) => {
-    console.log(`http request received: type: GET, path: '/', from: ${req.socket.remoteAddress}`);
-    res.render('pages/index.html');
-});
-app.get('/resume', (req, res) => {
-  console.log(`http request received: type: GET, path: '/resume', from: ${req.socket.remoteAddress}`);
-  var tempFile = path.join(__dirname, 'public', 'resume.pdf');
-  fs.readFile(tempFile, (err,data) => {
-     res.contentType("application/pdf");
-     res.send(data);
-  });
-});
-// app.get('/virusSim', (req, res) => {
-//   console.log(`http request received: type: GET, path: '/virusSim', from: ${req.socket.remoteAddress}`);
-//     res.render('pages/virus.html');
-// });
-
-// Binds server to the port and stars listening.
-server.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
-});
+    // Views
+    app.get('/', (req, res) => {
+            console.log(`http request received: type: GET, path: '/', from: ${req.socket.remoteAddress}`);
+            res.render('pages/index.html');
+    });
+    app.get('/resume', (req, res) => {
+        console.log(`http request received: type: GET, path: '/resume', from: ${req.socket.remoteAddress}`);
+        var tempFile = path.join(__dirname, 'public', 'resume.pdf');
+        fs.readFile(tempFile, (err,data) => {
+            res.contentType("application/pdf");
+            res.send(data);
+        });
+    });
+    
+    // Binds server to the port and stars listening.
+    server.listen(PORT, () => {
+        console.log(`listening on port ${PORT}`);
+    });
+}
