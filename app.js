@@ -1,4 +1,5 @@
 const PORT = 3000;
+const RESUME_URL = 'https://drive.google.com/file/d/1SX2TRx47ZvMOm7t_fO6YuOFoYNClozxR/view?usp=sharing';
 
 // Node dependencies
 const express = require('express');
@@ -29,11 +30,12 @@ const { send } = require('process');
     });
     app.get('/resume', (req, res) => {
         console.log(`http request received: type: GET, path: '/resume', from: ${req.socket.remoteAddress}`);
-        var tempFile = path.join(__dirname, 'public', 'resume.pdf');
-        fs.readFile(tempFile, (err,data) => {
-            res.contentType("application/pdf");
-            res.send(data);
-        });
+        // var tempFile = path.join(__dirname, 'public', 'resume.pdf');
+        // fs.readFile(tempFile, (err,data) => {
+        //     res.contentType("application/pdf");
+        //     res.send(data);
+        // });
+        res.redirect(RESUME_URL);
     });
     
     // Binds server to the port and stars listening.
