@@ -26,29 +26,6 @@ button {
 span {
 	font-size: 13pt;
 }
-
-
-#navbar {
-    width: 100%;
-    height: calc(16pt + 10px + 10px);
-    background-color: rgb(42,42,42);
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-.navbutton {
-	margin-left: 40px;
-    margin-right: 20px;
-    font-size: 16pt;
-    color: rgb(149,149,149);
-    text-decoration: none;
-}
-.navbutton:hover {
-    color: rgb(255,255,255);
-}
-#signature {
-	height: calc(16pt + 10px + 10px);
-}
-
 .header-container {
 	margin-left: 5%;
 	margin-right: 5%;
@@ -70,13 +47,13 @@ span {
 }
 #ui-container {
 	width: 50%;
-	height: calc(50% - (16pt + 20px + 20px));
+	height: 50%;
 	float: left;
 }
 #sim-container {
 	float: right;
 	width: 48%;
-	height: calc(100% - (16pt + 20px + 20px));
+	height: 100%;
 	position: relative;
 }
 

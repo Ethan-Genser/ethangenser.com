@@ -134,7 +134,7 @@ table {
     background-size: cover;
 }
 #mazeCard {
-    background: url("/img/maze.png");
+    background: url("/img/maze2.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -191,4 +191,8 @@ table {
 
 .preload {
     display: none;
+}
+
+.projectLink {
+    color: #2482bd;
 }

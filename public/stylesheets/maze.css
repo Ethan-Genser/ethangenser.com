@@ -1,0 +1,82 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+p {
+    margin: 0 0 0 0;
+}
+
+#header {
+    color: #ffffff;
+    background-color: #264b72;
+}
+
+.header-item {
+    height: 100%;
+    vertical-align: middle;
+    padding: 4px 30px 4px 30px
+}
+
+.header-button {
+    height: 100%;
+    vertical-align: middle;
+    padding: 4px 10px 4px 10px
+}
+
+#title {
+    margin: 0 0 5px 0;
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+select {
+    padding: 10px 0 10px 0;
+    border-radius: 8px;
+    background-color: #c6e1ff;
+}
+
+#maze-container {
+    height: 90%;
+}
+
+#maze-grid {
+    margin: 20px auto 20px auto;
+    width: 40%;
+    height: 90%;
+}
+
+#maze-grid td {
+    border: #d3d3d3 1px solid;
+}
+
+#maze-center {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#side-bar {
+    background-color: #d3d3d3;
+}
+
+button {
+    padding: 10px 20px 10px 20px;
+    border-radius: 8px;
+    background-color: #80e6c4;
+    border: 1px solid #767676;
+}
+
+button:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+#buttons-table {
+    margin: 0 0 0 auto;
+}
+
+#pause-button {
+    display: none;
+}

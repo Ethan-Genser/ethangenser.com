@@ -30,16 +30,19 @@ const { send } = require('process');
     });
     app.get('/resume', (req, res) => {
         console.log(`http request received: type: GET, path: '/resume', from: ${req.socket.remoteAddress}`);
-        // var tempFile = path.join(__dirname, 'public', 'resume.pdf');
-        // fs.readFile(tempFile, (err,data) => {
-        //     res.contentType("application/pdf");
-        //     res.send(data);
-        // });
         res.redirect(RESUME_URL);
     });
-    
+    app.get('/maze', (req, res) => {
+        console.log(`http request received: type: GET, path: '/maze', from: ${req.socket.remoteAddress}`);
+        res.render('pages/maze.html');
+    });
+    app.get('/virus', (req, res) => {
+        console.log(`http request received: type: GET, path: '/virus', from: ${req.socket.remoteAddress}`);
+        res.render('pages/virus.html');
+    });
     // Binds server to the port and stars listening.
     server.listen(PORT, () => {
         console.log(`listening on port ${PORT}`);
     });
 }
+
