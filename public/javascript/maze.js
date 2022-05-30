@@ -1,4 +1,5 @@
 const RECURSIVE_BACKTRACKING = "Recursive Backtracking";
+const ELLERS_ALGORITHM = "Eller's Algorithm";
 const MAX_DELAY = 500;
 
 $(document).ready(() => {
@@ -64,6 +65,10 @@ $(document).ready(() => {
             case RECURSIVE_BACKTRACKING:
                 RecusiveBacktracking();
                 break;
+
+            case ELLERS_ALGORITHM:
+                Eller();
+                break; 
         }
     }
     
@@ -87,7 +92,7 @@ $(document).ready(() => {
         cells[currentCell.x][currentCell.y].visited = true;
         unvisitedCount--;
         loop();    
-        return cells;
+        return;
     
         function loop() {
             if (unvisitedCount > 0) {
@@ -126,7 +131,6 @@ $(document).ready(() => {
         }
 
         function getUnivistedNeighbors(x, y) {
-            console.log(currentCell);
             unvisited = [];
             // Left neighbor
             if (x > 0 && !cells[x-1][y].visited) {
@@ -171,6 +175,116 @@ $(document).ready(() => {
                     cells[from.x][from.y].right = false;
                     cells[to.x][to.y].left = false;
                 }
+            }
+        }
+    }
+
+    function Eller() {
+        class Tree {
+            constructor(parent) {
+                this.parent = parent;
+            }
+            root() {
+                if (this.parent != null) {
+                    return this.parent.root();
+                }
+                else {
+                    return this;
+                }
+            }
+            connectTo(newParent) {
+                this.parent = newParent;
+            }
+        }
+
+        const TOP = 1;
+        const LEFT = 2;
+
+        // Initialize map
+        let cells = [];
+        for (let x = 0; x < size; x++) {
+            let col = [];
+            for (let y = 0; y < size; y++) {
+                col.push({tree: new Tree(null), top:true, right:true, bottom:true, left:true});
+            }
+            cells.push(col);
+        }
+
+        // Creates a list of every edge
+        let edges = [];
+        for (let x = 0; x < size; x++) {
+            for (let y = 0; y < size; y++) {
+                if (y > 0) {
+                    edges.push({x:x, y:y, direction:TOP});
+                }
+                if (x > 0) {
+                    edges.push({x:x, y:y, direction:LEFT});
+                }
+            }
+        }
+
+        // Execute main loop
+        let lastCell1 = null;
+        let lastCell2 = null;
+        loop();
+
+        function loop() {
+            if (edges.length > 0) {
+                if (!isPaused) {
+                    // Selects a random edge
+                    let index = Math.floor(Math.random() * edges.length);
+                    let edge = edges[index];
+                    let deltaX = 0;
+                    let deltaY = 0;
+
+                    // Calculates the position of the cells on either side of the edge.
+                    if (edge.direction == TOP) {
+                        deltaY = -1;
+                    }
+                    else if (edge.direction == LEFT) {
+                        deltaX = -1;
+                    }
+                    let cell1 = cells[edge.x][edge.y];
+                    let cell2 = cells[edge.x + deltaX][edge.y + deltaY];
+
+                    // If the cells on either side of the edge are not already in the same tree, connect them.
+                    if (cell1.tree.root() !== cell2.tree.root()) {
+                        if (edge.direction == TOP) {
+                            cell1.top = false;
+                            cell2.bottom = false;
+                        }
+                        else if (edge.direction == LEFT) {
+                            cell1.left = false;
+                            cell2.right = false;
+                        }
+                        cell1.tree.root().connectTo(cell2.tree);
+
+                        // Painting the cells
+                        paintCell(edge.x, edge.y, "#00c483", cell1);
+                        paintCell(edge.x + deltaX, edge.y + deltaY, "#00c483", cell2);
+                        if (lastCell1 != null && lastCell2 != null) {
+                            paintCell(lastCell1.x, lastCell1.y, "#00c48356", cells[lastCell1.x][lastCell1.y]);
+                            paintCell(lastCell2.x, lastCell2.y, "#00c48356", cells[lastCell2.x][lastCell2.y]);
+                        }
+                        lastCell1 = {x:edge.x, y:edge.y};
+                        lastCell2 = {x:edge.x + deltaX, y:edge.y + deltaY};
+                    }
+
+                    // Remove the chosen edge from the list of edges.
+                    edges.splice(index, 1);
+                }
+                // Repeats the loop after the specified delay.
+                setTimeout(loop, speed);
+            }
+            // Maze is complete
+            else {
+                paintCell(lastCell1.x, lastCell1.y, "#00c48356", cells[lastCell1.x][lastCell1.y]);
+                paintCell(lastCell2.x, lastCell2.y, "#00c48356", cells[lastCell2.x][lastCell2.y]);
+                runButton.style.display = "inline";
+                pauseButton.style.display = "none";
+                sizeRange.disabled = false;
+                isRunning = false;
+                return;
             }
         }
     }
