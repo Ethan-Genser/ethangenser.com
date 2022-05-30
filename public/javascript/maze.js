@@ -1,5 +1,5 @@
 const RECURSIVE_BACKTRACKING = "Recursive Backtracking";
-const ELLERS_ALGORITHM = "Eller's Algorithm";
+const KRUSKALS_ALGORITHM = "Kruskal's Algorithm";
 const MAX_DELAY = 500;
 
 $(document).ready(() => {
@@ -66,8 +66,8 @@ $(document).ready(() => {
                 RecusiveBacktracking();
                 break;
 
-            case ELLERS_ALGORITHM:
-                Eller();
+            case KRUSKALS_ALGORITHM:
+                Kruskal();
                 break; 
         }
     }
@@ -179,7 +179,7 @@ $(document).ready(() => {
         }
     }
 
-    function Eller() {
+    function Kruskal() {
         class Tree {
             constructor(parent) {
                 this.parent = parent;
