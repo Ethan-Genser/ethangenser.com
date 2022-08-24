@@ -1,6 +1,8 @@
+# Server management scripts
 restart.sh
 restartApache.sh
 restartApp.sh
+httpsCert.sh
 
 # Node build artifacts
 node_modules
