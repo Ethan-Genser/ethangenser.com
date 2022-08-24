@@ -1,5 +1,6 @@
 const RECURSIVE_BACKTRACKING = "Recursive Backtracking";
-const KRUSKALS_ALGORITHM = "Kruskal's Algorithm";
+const KRUSKAL = "Kruskal's Algorithm";
+const ELLER = "Eller's Algorithm";
 const MAX_DELAY = 500;
 
 $(document).ready(() => {
@@ -66,8 +67,12 @@ $(document).ready(() => {
                 RecusiveBacktracking();
                 break;
 
-            case KRUSKALS_ALGORITHM:
+            case KRUSKAL:
                 Kruskal();
+                break;
+
+            case ELLER:
+                Eller();
                 break; 
         }
     }
@@ -289,6 +294,95 @@ $(document).ready(() => {
         }
     }
     
+    function Eller() {
+        const HORIZONTAL_MERGE_CHANCE = 0.5;
+        const VERTICAL_MERGE_CHANCE = 0.5;
+
+        let cells = [];
+        let sets = {};
+        for (let x = 0; x < size; x++) {
+            let col = [];
+            for (let y = 0; y < size; y++) {
+                let cell = {set:0, x:x, y:y, top:true, right:true, bottom:true, left:true};
+                col.push(cell);
+            }
+            cells.push(col);
+        }
+        
+        loop(0, 0);
+
+        function loop(x, y) {
+            let currentCell = cells[x][y];
+            let setsInRow = [];
+
+            // If the cell is not a part of any set yet, create a new set for it with the smallest available index.
+            if (currentCell.set == 0) {
+                console.log("currentCell.set == 0");
+                for (let i = 0; currentCell.set == 0; i++) {
+                    console.log(`i: ${i}`);
+                    if (sets[i] == null) {
+                        console.log("sets[i] == null");
+                        currentCell.set = i;
+                        setsInRow.push(i);
+                    }
+                }
+            }
+            // Merging currentCell with its neighbor to the left.
+            if (x > 0) {
+                let neighbor = cells[x-1][y];
+                if (Math.random() <= HORIZONTAL_MERGE_CHANCE) {
+                    if (currentCell.set != neighbor.set) {
+                        currentCell.left = false;
+                        neighbor.right = false;
+                        for (let i in sets[currentCell.set]) {
+                            let cell = sets[currentCell.set][i];
+                            cells[cell.x][cell.y].set = neighbor.set;
+                            sets[neighbor.set].push(cell);
+                        }
+                        delete sets[currentCell.set];
+                        setsInRow.slice(setsInRow.indexOf(currentCell.set), 1);
+                        paintCell(currentCell.x, currentCell.y, "#00c483", currentCell);
+                        paintCell(neighbor.x, neighbor.y, "#00c483", neighbor);
+                    }
+                }
+            }
+            // Once the entire row has been iterated, make vertical connections such that every set in the row has at least one vertical connection.
+            if (x == size - 1) {
+                if (y < size - 1) {
+                    let currentRow = cells[x];
+                    let rowSets = {}
+                    for (let i in currentRow) {
+                        let cell = currentRow[i];
+                        if (rowSets[cell.set] == null) {
+                            rowSets[cell.set] = [];
+                        }
+                        rowSets[cell.set].push(cell);
+                    }
+                    for (let i in rowSets) {
+                        let set = rowSets[i];
+                        let verticalConnections = 0;
+                        while (verticalConnections < 1) {
+                            for (let j in set) {
+                                let cell = set[j];
+                                let neighbor = cells[cell.x][cell.y+1];
+                                if (Math.random() < VERTICAL_MERGE_CHANCE) {
+                                    cells[cell.x][cell.y].bottom = false;
+                                    cells[neighbor.x][neighbor.y].top = false;
+                                    neighbor.set = cell.set;
+                                    verticalConnections++;
+                                    paintCell(cell.x, cell.y, "#00c483", cells[cell.x][cell.y]);
+                                    paintCell(neighbor.x, neighbor.y, "#00c483", cells[neighbor.x][neighbor.y]);
+                                }
+                            }
+                        }
+                    }
+                    setTimeout(()=>{loop(0, ++y);}, speed);
+                }
+            }
+            setTimeout(()=>{loop(++x, y);}, speed);
+        }
+    }
+
     function paintCell(x, y, color, borders) {
         let cellStyle = table.rows[y].cells[x].style;
 

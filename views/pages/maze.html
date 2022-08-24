@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="/stylesheets/maze.css">
+        <link rel="stylesheet" href="maze.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="/javascript/maze.js"></script>
+        <script src="maze.js"></script>
         <title>Maze Generator</title>
     </head>
     <body>
@@ -24,19 +24,20 @@
                                 <select name="algorithm-select" id="algorithm-select">
                                     <option target="algorithm-select" value="Recursive Backtracking">Recursive Backtracking</option>
                                     <option target="algorithm-select" value="Kruskal's Algorithm">Kruskal's Algorithm</option>
+                                    <!-- <option target="algorithm-select" value="Eller's Algorithm">Eller's Algorithm</option> -->
                                 </select>
                             </td>
                             <td class="header-item">
                                 <p>Size</p>
-                                <img src="/img/small.svg" width="15px">
+                                <img src="small.svg" width="15px">
                                 <input type="range" name="size-range" class="range" id="size-range" min="8" max="35" step="1" value="12">
-                                <img src="/img/large.svg" width="25px">
+                                <img src="large.svg" width="25px">
                             </td>
                             <td class="header-item">
                                 <p>Speed</p>
-                                <img src="/img/turtle.svg" width="25px">
+                                <img src="turtle.svg" width="25px">
                                 <input type="range" name="speed-range" class="range" id="speed-range" min="0" max="490" step="1" value="220">
-                                <img src="/img/rabbit.svg" width="25px">
+                                <img src="rabbit.svg" width="25px">
                             </td>
                         </tr>
                     </table>
@@ -45,8 +46,8 @@
                     <table id="buttons-table">
                         <tr>
                             <td class="header-button">
-                                <button id="run-button"><img src="/img/play.svg" width="25px"></button>
-                                <button id="pause-button"><img src="/img/pause.svg" width="25px"></button>
+                                <button id="run-button"><img src="play.svg" width="25px"></button>
+                                <button id="pause-button"><img src="pause.svg" width="25px"></button>
                             </td>
                         </tr>
                     </table>
@@ -66,5 +67,7 @@
                 </div>
             </div>
         </div>
+        <hr class="license">
+        <p class="license">Copyright (c) 2022 Ethan Genser</p>
     </body>
 </html>
