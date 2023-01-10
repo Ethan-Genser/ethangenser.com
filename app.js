@@ -1,5 +1,5 @@
 const PORT = 3000;
-const RESUME_URL = 'https://drive.google.com/file/d/1SX2TRx47ZvMOm7t_fO6YuOFoYNClozxR/view?usp=sharing';
+const RESUME_URL = 'https://docs.google.com/document/d/19mHLwKxzb-qbwL_JIG8WDZGkg-_D-Dd1qOY7Ranf5Wo/edit?usp=sharing';
 
 // Node dependencies
 const express = require('express');
