@@ -72,17 +72,36 @@ table {
     padding-left: 20px;
 }
 #subtitle {
+    padding-top: 5px;
     font-size: 14pt;
     letter-spacing: 3px;
     font-style: italic;
+
 }
 #bio {
     font-size: 14pt;
+}
+.tooltip-parent {
+    position: relative;
+    display: inline-block;
+}
+.tooltip-parent .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    margin-left: -60px;
+}
+.contactLink:hover + .tooltip-text {
+    visibility: visible;
 }
 .contactButton {
     width: 50px;
     box-shadow: 5px 5px 5px #000000;
     border-radius: 190px;
+}
+.contactLinkContainer {
     margin: 0 20px 0 20px;
 }
 .title {
@@ -165,7 +184,7 @@ table {
 #contactBlock {
     text-align: center;
     color: #959595;
-    padding: 0 0 20px 0;
+    padding: 0 0 40px 0;
     background-color: #141414;
 }
 
