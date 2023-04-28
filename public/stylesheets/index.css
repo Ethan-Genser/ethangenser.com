@@ -64,12 +64,17 @@ table {
     height: 30%;
 }
 #profile {
-    height: 75%;
+    height: 80%;
     margin: 10px 0 10px 0;
 }
 #signature {
     width: 400px;
     padding-left: 20px;
+}
+#subtitle {
+    font-size: 14pt;
+    letter-spacing: 3px;
+    font-style: italic;
 }
 #bio {
     font-size: 14pt;
