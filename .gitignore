@@ -1,4 +1,5 @@
 # Server management scripts
+startApp.sh
 restart.sh
 restartApache.sh
 restartApp.sh
